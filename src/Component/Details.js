@@ -24,17 +24,17 @@ const Details = () => {
 
 
     useEffect(() => {
-
+       
         getData();
 
     }, [])
 
-    const getData = async () => {
+    const getData =  async() => {
         setLoading(true);
         try {
 
 
-            const res = await fetch(`https://cryptic-oasis-47086.herokuapp.com/usersEntry/${parms.eid}`)
+            const res = await fetch(`http://localhost:5000/usersEntry/${parms.eid}`)
             const data = await res.json();
 
             setFullData(data)
@@ -55,12 +55,6 @@ const Details = () => {
         }
     }
 
-
-
-
-    
-
-
     return (
         <div>
 
@@ -69,9 +63,9 @@ const Details = () => {
                     <CircularProgress size={20} thickness={10} color="warning" sx={{ paddingLeft: 1 }} />
                     <Typography variant='p'>Waitting...</Typography>
                 </Box>
-                    : <Card sx={{ margin: 10 ,boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" }}>
+                    : <Card sx={{ margin: 10, boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px" }}>
 
-                        <h3 style={{ textAlign: "left", backgroundColor: "white", margin: 10,borderBottom: "1px solid gray"}}>{fullData.formName}:</h3>
+                        <h3 style={{ textAlign: "left", backgroundColor: "white", margin: 10, borderBottom: "1px solid gray" }}>{fullData.formName}:</h3>
 
                         {error ? <Alert severity="error">You are not Added data — check it out!</Alert>
                             : <TableContainer component={Paper} >

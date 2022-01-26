@@ -35,7 +35,7 @@ const CreateForm = () => {
     const hanldeSubmit = (e) => {
         const procced = window.confirm('Are you want to Submit');
         if (procced) {
-            fetch('https://cryptic-oasis-47086.herokuapp.com/users', {
+            fetch('http://localhost:5000/users', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

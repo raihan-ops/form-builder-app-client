@@ -26,6 +26,7 @@ const Home = () => {
     const [search, setSearch] = useState("");
     const [searchList, setSearchList] = useState([]);
     const [loading, setLoading] = useState(false);
+    
 
 
     useEffect(() => {
@@ -38,7 +39,7 @@ const Home = () => {
         setLoading(true);
         try {
 
-            const res = await fetch('https://cryptic-oasis-47086.herokuapp.com/users')
+            const res = await fetch('http://localhost:5000/users')
             const _value = await res.json();
             setData(_value);
             setLoading(false);
